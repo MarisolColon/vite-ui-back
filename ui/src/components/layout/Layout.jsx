@@ -17,7 +17,9 @@ export default function Layout() {
             <Row>
                 <Col>
                     <Outlet />
-                    <div 
+                </Col>
+            </Row>
+            {/* <div
                 id='intro-example'
                 className='text-center bg-image'
                 style={{ backgroundImage: `url('https://mdbootstrap.com/img/new/slides/041.webp')`,
@@ -25,7 +27,7 @@ export default function Layout() {
                         backgroundRepeat: 'no-repeat'
                     }}
             >
-                {/* <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', height: '500px'}}>
+                <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', height: '500px'}}>
                     <div className='d-flex justify-content-center align-items-center h-100'>
                         <div className='text-white'>
                             <h1 className='mb-3'>Learn React</h1>
@@ -53,10 +55,8 @@ export default function Layout() {
                             </MDBBtn>
                         </div>
                     </div>
-                </div> */}
-            </div>
-                </Col>
-            </Row>
+                </div>
+            </div> */}
         </Container>
         <Footer />
     </>)
