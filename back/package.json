@@ -4,9 +4,13 @@
     "dev": "DEBUG=app:* nodemon app.js"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
   }
 }
