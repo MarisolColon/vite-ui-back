@@ -3,14 +3,14 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello World Chole!')
+  res.send('Hello World Chole!!!')
 })
 
 // route for handling dynamic user IDs
 app.get('/users/:userId', (req, res) => {
     // Extract the user ID from the URL parameters
     const userId = req.params.userId;
-    res.send(`Hello Chole, This is User ${userId}!`);
+    res.send(`Hello Chole, This is User ${userId}!!`);
 })
 // route for handling search with query parameters
 app.get('/search', (req, res) => {
