@@ -36,12 +36,12 @@ const Contact = () => {
             }}
         >
             {({ handleSubmit, handleChange, values, errors }) => (
-                <Form noValidate onSubmit={handleSubmit}>
+                <Form id="ContactId" noValidate onSubmit={handleSubmit}>
                     <Row>
                         <h1>Sección  de Registro</h1>
                     </Row>
                     <Row className="mb-3">
-                        <Form.Group as={Col} md="4" controlId="validationFormik01">
+                        <Form.Group id="firstName" as={Col} md="4" controlId="validationFormik01">
                             <Form.Label>First name</Form.Label>
                             <Form.Control
                                 type="text"
@@ -54,7 +54,7 @@ const Contact = () => {
                                 {errors.firstName}
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} md="4" controlId="validationFormik02">
+                        <Form.Group id="lastName" as={Col} md="4" controlId="validationFormik02">
                             <Form.Label>Last name</Form.Label>
                             <Form.Control
                                 type="text"
@@ -67,7 +67,7 @@ const Contact = () => {
                                 {errors.lastName}
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} md="4" controlId="validationFormikEmail">
+                        <Form.Group id="email" as={Col} md="4" controlId="validationFormikEmail">
                             <Form.Label>Email</Form.Label>
                             <InputGroup hasValidation>
                                 <Form.Control
@@ -85,7 +85,7 @@ const Contact = () => {
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
-                        <Form.Group as={Col} md="6" controlId="validationFormik03">
+                        <Form.Group id='city' as={Col} md="6" controlId="validationFormik03">
                             <Form.Label>City</Form.Label>
                             <Form.Control
                                 type="text"
@@ -100,7 +100,7 @@ const Contact = () => {
                                 {errors.city}
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} md="3" controlId="validationFormik04">
+                        <Form.Group id="state" as={Col} md="3" controlId="validationFormik04">
                             <Form.Label>State</Form.Label>
                             <Form.Control
                                 type="text"
@@ -114,7 +114,7 @@ const Contact = () => {
                                 {errors.state}
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} md="3" controlId="validationFormik05">
+                        <Form.Group id="zip" as={Col} md="3" controlId="validationFormik05">
                             <Form.Label>Zip</Form.Label>
                             <Form.Control
                                 type="text"
