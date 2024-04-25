@@ -1,13 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
     const ContactInfo = sequelize.define('ContactInfo', {
-        constact_id: {
-            type: DataTypes.INTEGER(11),
+        contact_id: {
+            type: DataTypes.BIGINT(11),
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
         firstName: {
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         lastName: {

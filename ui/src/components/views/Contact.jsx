@@ -6,6 +6,18 @@ import Row from 'react-bootstrap/Row'
 import * as formik from 'formik'
 import * as yup from 'yup'
 
+function createContact(values) {
+    return fetch(`/api/contacts`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+    })
+        .then((response) => response.json())
+        .catch((error) => console.error(error))
+}
+
 
 const Contact = () => {
     const { Formik } = formik;
@@ -17,14 +29,13 @@ const Contact = () => {
         city: yup.string().required(),
         state: yup.string().required(),
         zip: yup.string().required(),
-        terms: yup.bool().required().oneOf([true], 'Terms must be accepted'),
     })
 
     return (
-        <Formik 
+        <Formik
             validationSchema={schema}
             validateOnChange={false}
-            onSubmit={console.log}
+            onSubmit={createContact}
             initialValues={{
                 firstName: '',
                 lastName: '',
@@ -32,7 +43,6 @@ const Contact = () => {
                 city: '',
                 state: '',
                 zip: '',
-                terms: false,
             }}
         >
             {({ handleSubmit, handleChange, values, errors }) => (
@@ -129,18 +139,6 @@ const Contact = () => {
                             </Form.Control.Feedback>
                         </Form.Group>
                     </Row>
-                    <Form.Group className="mb-3">
-                        <Form.Check
-                            required
-                            name="terms"
-                            label="Agree to terms and conditions"
-                            onChange={handleChange}
-                            isInvalid={!!errors.terms}
-                            feedback={errors.terms}
-                            feedbackType="invalid"
-                            id="validationFormik0"
-                        />
-                    </Form.Group>
                     <Button type="submit">Submit form</Button>
                 </Form>
             )}
